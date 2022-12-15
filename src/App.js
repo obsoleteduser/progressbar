@@ -1,24 +1,58 @@
-import logo from './logo.svg';
+
+import { useState } from 'react';
 import './App.css';
 
 function App() {
+
+  const [progress, setProgress] = useState(false)
+  const [count, setCount] = useState(0)
+
+  const times  = {
+    animationIterationCount: count
+  }
+
+  let porgressStyle = "progress-color"
+
+  const run = ()=>{
+    setCount(count+1)
+    setProgress(true)
+    
+  }
+
+
+  
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+
+<div className="App">
+
+
+<h1>Progress Bar</h1>
+
+
+<div className="progress-container">
+  <h2>Hack NASA</h2>
+<div className="progress-bar">
+  <div style={times} className={progress ? porgressStyle+=' run' : null}></div>
+</div>
+<button onClick={()=>{
+  run()
+}}>RUN</button>
+
+
+<h2>{count}</h2>
+
+</div>
+
+
+</div>
+
+
+
+  
+
+
   );
 }
 

@@ -1,5 +1,11 @@
 .App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
+  width: 100vw;
+  height: 100vh;
+  flex-direction: column;
 }
 
 .App-logo {
@@ -34,5 +40,48 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+
+
+.progress-container{
+  width: 30rem;
+  height: 20rem;
+  border: 1px solid  black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  gap: 1rem;
+}
+
+.progress-bar{
+  height: 2rem;
+  border: 1px solid black;
+  width: 100%;
+}
+
+.progress-color{
+  height: 100%;
+  width: 0;
+  background-color: green;
+}
+
+
+.run{
+
+ animation: progress 1000ms linear;
+ 
+
+}
+
+@keyframes progress {
+  from{
+    width: 0;
+  }
+  to{
+    width: 100%;
   }
 }
